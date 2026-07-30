@@ -33,7 +33,7 @@ const items = computed<NavigationMenuItem[][]>(() => [
     {
       label: 'Roteamento',
       icon: 'i-lucide-navigation-2',
-      // to: '/dashboard/routing',
+      to: '/dashboard/routing',
       active: route.path.startsWith('/dashboard/routing')
     },
     {

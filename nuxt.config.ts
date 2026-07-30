@@ -12,6 +12,11 @@ export default defineNuxtConfig({
       mapboxAccessToken: process.env.NUXT_PUBLIC_MAPBOX_TOKEN || '',
     },
   },
+  vite: {
+    optimizeDeps: {
+      include: ['@vue/devtools-core', '@vue/devtools-kit']
+    }
+  },
   supabase: {
     redirectOptions: {
       login: '/login',
