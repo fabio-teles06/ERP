@@ -1,5 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 
 export default async function Page() {
@@ -8,14 +10,16 @@ export default async function Page() {
 
     const currentUser = await supabase.auth.getUser();
     const loggedIn = currentUser.data.user != null;
-
+    
     return (
         <div>
-            <p>{loggedIn ? "Verdadeiro" : "Falso"}</p>
 
-            {loggedIn && <p>
-                {JSON.stringify(currentUser.data)}
-            </p>}
+            <Suspense fallback={<Loading />}>
+                <p>{loggedIn ? "Verdadeiro" : "Falso"}</p>
+                {loggedIn && <p>
+                    {JSON.stringify(currentUser.data)}
+                </p>}
+            </Suspense>
         </div>
     )
 }
