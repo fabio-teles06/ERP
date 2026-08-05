@@ -32,7 +32,7 @@ export default function ShipmentsList() {
             <ul>
                 {shipments.map((shipment) => (
                     <li key={shipment.number}>
-                        Número: {shipment.number}, Status: {shipment.status}
+                        {JSON.stringify(shipment)}
                     </li>
                 ))}
             </ul>

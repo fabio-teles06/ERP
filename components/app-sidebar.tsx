@@ -24,7 +24,7 @@ const items = [
     {
         title: 'Gestão',
         children: [
-            { title: 'Clientes', href: '/dashboard/clients', icon: User },
+            { title: 'Clientes', href: '/dashboard/customers', icon: User },
             { title: 'Fretes', href: '/dashboard/shipments', icon: Package },
             { title: 'Veículos', href: '/dashboard/vehicles', icon: Truck },
         ]
